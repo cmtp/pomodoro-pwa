@@ -1,0 +1,13 @@
+@import "../../scss/variables";
+
+.timer {
+    align-items: center;
+    border: solid $primary 3px;
+    border-radius: 50%;
+    margin: 10px auto;
+    height: 200px;
+    width: 200px;
+    .timer-text {
+        font-size: 2em;
+    }
+}

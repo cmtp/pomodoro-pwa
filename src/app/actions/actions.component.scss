@@ -1,0 +1,17 @@
+.actions {
+  margin: auto;
+  width: 50%;
+}
+.justify-content {
+  justify-content: space-between;
+}
+@media screen and (max-width: 400px) {
+  .action-item {
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  .flex-container {
+      flex-direction: column;
+  }
+}
