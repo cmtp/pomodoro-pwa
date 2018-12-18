@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { TimerComponent } from './timer/timer.component';
 import { ActionsComponent } from './actions/actions.component';
 import { SharedModule } from './shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,13 @@ import { SharedModule } from './shared/shared.module';
     ActionsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
