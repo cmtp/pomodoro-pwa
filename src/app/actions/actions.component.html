@@ -1,5 +1,5 @@
 <div class="flex-container justify-content actions">
-  <button mat-raised-button color="primary" class="action-item">Start</button>
-  <button mat-raised-button color="warn" class="action-item">Stop</button>
-  <button mat-raised-button color="accent" class="action-item">Reset</button>
+  <button mat-raised-button color="primary" class="action-item" (click)="startCountTimer()">Start</button>
+  <button mat-raised-button color="warn" class="action-item" (click)="stopCountTimer()">Stop</button>
+  <button mat-raised-button color="accent" class="action-item" (click)="resetTimer()">Reset</button>
 </div>

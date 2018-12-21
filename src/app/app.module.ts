@@ -13,6 +13,24 @@ import { ActionsComponent } from './actions/actions.component';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
 
+// ngrx modules
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from "@ngrx/effects";
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store'
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers, metaReducers } from './reducers/reducers';
+
+const NGRX_IMPORTS = [
+  StoreModule.forRoot(reducers, { metaReducers }),
+  StoreRouterConnectingModule.forRoot({ stateKey: 'router'}),
+  EffectsModule.forRoot([]),
+  StoreDevtoolsModule.instrument({
+    name: 'PomodoroNgrx',
+    logOnly: environment.production,
+    maxAge: 25
+  })
+]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +45,8 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     MaterialModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    ...NGRX_IMPORTS
   ],
   providers: [],
   bootstrap: [AppComponent]
